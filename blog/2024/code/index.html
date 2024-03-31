@@ -94,7 +94,7 @@ CLC
 RCR CX
 CLC
 RCR CX
-</code></pre> <h3 id="sum">Sum</h3> <p>Write a program that puts into register AX the sum of two 8-bit numbers stored in 16-bit register BX.</p> <p>Example: BX = \(032E_{16}\), result AX = \(03__{16} + 2E__{16}\) = \(31_{16}\).</p> <p>If BX=0, then AX=0.</p> <p>Use the shift operations RCL or RCR.</p> <p><em>Do Not forget CLC before any RCL and RCR!</em></p> <pre><code class="language-assembly">MOV AX, BX
+</code></pre> <h3 id="sum">Sum</h3> <p>Write a program that puts into register AX the sum of two 8-bit numbers stored in 16-bit register BX.</p> <p>Example: BX = \(032E_{16}\), result AX = \(03_{16} + 2E_{16}\) = \(31_{16}\).</p> <p>If BX=0, then AX=0.</p> <p>Use the shift operations RCL or RCR.</p> <p><em>Do Not forget CLC before any RCL and RCR!</em></p> <pre><code class="language-assembly">MOV AX, BX
 AND AX, 00FF
 MOV CX, BX
 
