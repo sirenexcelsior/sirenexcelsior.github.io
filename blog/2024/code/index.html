@@ -353,73 +353,221 @@ JMP ?01
 INC AX
 ?01:
 ADD AX, CX
-</code></pre> <h3 id="bus-for-programmers">Bus for programmers</h3> <p>Bus tickets for programmers have a hexadecimal number. We call a ticket lucky if the sum of the two left hexadecimal digits is equal to the sum of the two right digits, for example ADE9. Example of an unsuccessful ticket: 7+8≠9+3. How many lucky ticket numbers are found from number BX to number CX, including borders?</p> <pre><code class="language-assembly">SUB CX ,  BX
-ADD CX ,  2
+</code></pre> <h3 id="bus-for-programmers">Bus for programmers</h3> <p>Bus tickets for programmers have a hexadecimal number. We call a ticket lucky if the sum of the two left hexadecimal digits is equal to the sum of the two right digits, for example ADE9. Example of an unsuccessful ticket: 7+8≠9+3. How many lucky ticket numbers are found from number BX to number CX, including borders?</p> <pre><code class="language-assembly">SUB CX, BX          ; Subtract BX from CX, result stored in CX
+ADD CX, 2           ; Add 2 to CX, adjusting the loop counter
+
+?00: 
+DEC CX              ; Decrement CX by 1
+JZ ?03              ; Jump to label ?03 if CX is zero (end of loop condition)
+
+MOV [1], BX         ; Store the value of BX into memory location addressed by 1
+AND BX, 0F          ; Perform bitwise AND between BX and 0F, isolating the lowest 4 bits
+
+MOV DX, BX          ; Move the result of AND operation into DX
+
+MOV BX, [1]         ; Restore BX from memory location addressed by 1
+AND BX, F0          ; Perform bitwise AND between BX and F0, isolating bits 4-7
+CLC                 ; Clear carry flag to prepare for rotate operation
+RCR BX              ; Rotate BX right through carry, shifting bits 4-7 to 0-3
+RCR BX
+RCR BX
+RCR BX              ; Repeat rotation to complete the shift of bits 4-7 to 0-3
+
+ADD DX, BX          ; Add the newly shifted bits in BX to DX
+
+MOV BX, [1]         ; Restore BX from memory location addressed by 1
+AND BX, F00         ; Perform bitwise AND between BX and F00, isolating bits 8-11
+CLC                 ; Clear carry flag to prepare for rotate operation
+RCR BX              ; Rotate BX right through carry, shifting bits 8-11 towards lower bit positions
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX              ; Repeat rotation to complete the shift of bits 8-11 to 0-3
+
+SUB DX, BX          ; Subtract the shifted value in BX from DX
+
+MOV BX, [1]         ; Restore BX from memory location addressed by 1
+AND BX, F000        ; Perform bitwise AND between BX and F000, isolating bits 12-15
+CLC                 ; Clear carry flag to prepare for rotate operation
+RCR BX              ; Rotate BX right through carry, shifting bits 12-15 towards lower bit positions
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX
+RCR BX              ; Repeat rotation to complete the shift of bits 12-15 to 0-3
+
+SUB DX, BX          ; Subtract the final shifted value in BX from DX
+
+CMP DX, 0           ; Compare DX with 0
+JZ ?01              ; Jump to label ?01 if DX is zero (if comparison equals zero)
+MOV BX, [1]         ; Restore BX from memory location addressed by 1
+INC BX              ; Increment BX
+JMP ?00             ; Jump back to start of loop at label ?00
+
+?01: 
+INC AX              ; Increment AX (could be part of a different operation or counter)
+MOV BX, [1]         ; Restore BX from memory location addressed by 1
+INC BX              ; Increment BX
+JMP ?00             ; Jump back to start of loop at label ?00
+
+?03:                ; Label ?03, marks the end of the loop or a specific condition block
+</code></pre> <p><img src="https://github.com/sirenexcelsior/sirenexcelsior.github.io/blob/master/assets/img/AL02-15.png" alt="BusProg"></p> <h2 id="lecture-03">Lecture 03</h2> <h3 id="contents-of-an-address">Contents of an Address</h3> <p>Write a program that puts the contents at address BX into register AX.</p> <pre><code class="language-assembly">MOV AX, [BX]
+</code></pre> <h3 id="contents-of-2">Contents of 2</h3> <p>Write a program that gets the number plus 200 from the BX register. Place the result in the AX register.</p> <p>Example: BX=\(100_{16}\) ⇒ AX=\(300_{16}\)</p> <pre><code class="language-assembly">ADD BX, 200
+MOV AX, BX
+</code></pre> <h3 id="contents-of-an-address-3">Contents of an Address 3</h3> <p>Write a program that gets the number plus \(200_{16}\) located at address BX. Place the result in the AX register.</p> <pre><code class="language-assembly">ADD [BX], 200
+MOV AX, [BX]
+</code></pre> <h3 id="sum-of-three-numbers">Sum of three numbers</h3> <p>Write a program that puts the sum of the three numbers at addresses 0, 1, and 2 into register AX.</p> <pre><code class="language-assembly">ADD AX, [0]
+ADD AX, [1]
+ADD AX, [2]
+</code></pre> <h3 id="amount-by-address">Amount by address</h3> <p>Write a program that substitutes into register AX the sum of three numbers located at addresses BX, BX+1, BX+2.</p> <pre><code class="language-assembly">ADD AX, [BX]
+INC BX
+ADD AX, [BX]
+INC BX
+ADD AX, [BX]
+</code></pre> <h3 id="array-sum">Array Sum</h3> <p>Write a program that puts into register AX the sum of an array of length CX, starting at address BX.</p> <p>The sum of an empty array is 0.</p> <pre><code class="language-assembly">?00:
+CMP CX, 0
+JZ  ?01
+
+ADD AX, [BX]
+DEC CX
+INC BX
+JMP ?00
+
+?01:
+</code></pre> <h3 id="equal-array">Equal array</h3> <p>Write a program that puts 1 in register AX if all elements of an array of length CX are equal. The array starts at address BX. The answer is 1 if the array has length 0.</p> <pre><code class="language-assembly">MOV AX ,  1
+MOV DX ,  [BX]
+
+CMP CX ,  0
+JZ  ?02
+CMP CX ,  1
+JZ  ?02
+
+DEC CX
+?00: 
+CMP CX ,  0
+JZ  ?02
+
+INC BX
+DEC CX
+
+CMP DX ,  [BX]
+JNZ ?01
+JMP ?00
+
+?01: 
+MOV AX ,  0
+
+?02: 
+</code></pre> <h3 id="address-of-the-first-minimum-number">Address of the first minimum number</h3> <p>Write a program that places the address of the first minimum number in an array of length CX into register AX, starting at address BX.</p> <p>In the case of an empty sequence, the answer is 0.</p> <pre><code class="language-assembly">MOV AX, 0
+CMP CX, 0
+JZ  ?02
+
+MOV AX ,  BX
+MOV DX ,  [BX]
+
+?00: 
+CMP DX ,  [BX]
+JC  ?01
+JZ  ?01
+MOV DX ,  [BX]
+MOV AX ,  BX
+
+?01: 
+INC BX
+DEC CX
+JZ ?02
+JMP ?00
+
+?02: 
+</code></pre> <h3 id="the-number-of-all-connected-increasing-subsequences">The number of all connected increasing subsequences</h3> <p>Write a program that count all connected increasing subsequences. Places the result of an array of length CX, starting at address BX nto register AX.</p> <p>In the case of an empty sequence, the answer is 0.</p> <p>Example: 1 2 3 2 3 1 ⇒ AX=3.</p> <pre><code class="language-assembly">MOV AX ,  0
+CMP CX ,  0
+JZ  ?02
+
+MOV AX , 1
+MOV DX ,  [BX]
+INC BX
 
 ?00: 
 DEC CX
-JZ  ?03
-
-MOV [1] ,  BX
-
-AND BX ,  F
-
-MOV DX ,  BX
-
-MOV BX ,  [1]
-AND BX ,  F0
-CLC
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-
-ADD DX ,  BX
-
-MOV BX ,  [1]
-AND BX ,  F00
-CLC
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-
-SUB DX ,  BX
-
-MOV BX ,  [1]
-AND BX ,  F000
-CLC
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-RCR BX
-
-SUB DX ,  BX
-
-CMP DX ,  0
-JZ ?01
-MOV BX ,  [1]
+CMP CX ,  0
+JZ  ?02
+CMP DX ,  [BX]
+JZ  ?01
+JNC  ?01
+MOV DX ,  [BX]
 INC BX
 JMP ?00
 
 ?01: 
 INC AX
-MOV BX ,  [1]
+MOV DX ,  [BX]
 INC BX
 JMP ?00
 
+?02:
+</code></pre> <h3 id="address-of-the-second-maximum">Address of the second maximum</h3> <p>The CX register contains a value - the number of elements of the sequence located starting from the address BX.</p> <p>In the case of an empty sequence, the answer is 0</p> <p>If there is no second maximum, the answer is 0.</p> <p>Example: 1 2 3 2 3 1 ⇒ AX=5.</p> <pre><code class="language-assembly">MOV AX ,  0
+MOV [01F8] , 0			; A null address is needed for data transit in this task, and a random address is chosen here, but this is not a good method.
+MOV DX ,  [BX]
+ADD CX ,  2
+
+?00: 
+DEC CX
+CMP CX ,  0
+JZ  ?10
+
+CMP DX ,  [BX]
+JZ  ?01
+JC  ?03
+INC BX
+JMP ?00
+
+?01: 
+INC [01F8]
+CMP [01F8] ,  2
+JZ  ?02
+INC BX
+JMP ?00
+
+
+?02: 
+MOV AX ,  BX
+JMP ?00
+
 ?03: 
-</code></pre> <h2 id="lecture-03">Lecture 03</h2> <h3 id="contents-of-an-address">Contents of an Address</h3> <p>Write a program that puts the contents at address BX into register AX.</p> <pre><code class="language-assembly">MOV AX, [BX]
-</code></pre> <h3 id="contents-of-2">Contents of 2</h3> <p>Write a program that gets the number plus 200 from the BX register. Place the result in the AX register.</p> <p>Example: BX=\(100_{16}\) ⇒ \(AX=300_{16}\)</p> </d-article> <d-appendix> <d-footnote-list></d-footnote-list> <d-citation-list></d-citation-list> </d-appendix> <d-bibliography src="/assets/bibliography/"></d-bibliography> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2024 Wang · Siren. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. </div> </footer> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
+MOV DX ,  [BX]
+MOV [01F8] ,  1
+INC BX
+JMP ?00
+
+?10: 
+</code></pre> <h3 id="number-of-local-maxima-of-the-sequence">Number of local maxima of the sequence</h3> <p>Write a program, after the execution of which, the register AX will contain the number of local maxima of the sequence.</p> <p>The CX register contains a value - the number of elements of the sequence located starting from the address BX.</p> <p>In the case of an empty sequence, the answer is 0.</p> <p>An element of a non-empty sequence is called a local maximum if it has no neighbor greater than itself. For example, a sequence of one element has one local maximum. The sequence 4, 4, 2, 3, 0 has three local maxima: the first, second, and penultimate elements.</p> <pre><code class="language-assembly">; 
+</code></pre> <h3 id="the-lengths-of-the-sides-form-a-parallelogram">The lengths of the sides form a parallelogram</h3> <p>The array contains the lengths of the sides of the parallelogram as it is traversed clockwise.</p> <p>Write a program that puts 1 in register AX if the elements of the array (lengths of sides) of size CX, starting at address BX, form a parallelogram, and zero otherwise.</p> <p>In case of error data (CX≠4) the answer is 0.</p> <pre><code class="language-assembly">MOV AX , 0
+CMP CX ,  4
+JNZ  ?00
+
+MOV DX ,  [BX]
+ADD BX ,  2
+CMP [BX] ,  DX
+JNZ ?00
+
+ADD BX , 1
+MOV DX ,  [BX]
+SUB BX , 2
+CMP [BX] ,  DX
+JNZ ?00
+
+MOV AX , 1
+
+?00: 
+</code></pre> </d-article> <d-appendix> <d-footnote-list></d-footnote-list> <d-citation-list></d-citation-list> </d-appendix> <d-bibliography src="/assets/bibliography/"></d-bibliography> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2024 Wang · Siren. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. </div> </footer> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
