@@ -1,7 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://sirenexcelsior.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://sirenexcelsior.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-03-31T17:48:07+00:00</updated><id>https://sirenexcelsior.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">Assembly Language - Lecture 1</title><link href="https://sirenexcelsior.github.io/blog/2024/code/" rel="alternate" type="text/html" title="Assembly Language - Lecture 1"/><published>2024-03-30T15:09:00+00:00</published><updated>2024-03-30T15:09:00+00:00</updated><id>https://sirenexcelsior.github.io/blog/2024/code</id><content type="html" xml:base="https://sirenexcelsior.github.io/blog/2024/code/"><![CDATA[<h2 id="task-of-assembly-language---lecture-1">Task of Assembly Language - Lecture 1</h2> <h3 id="0-example">0 (Example)</h3> <pre><code class="language-assembly">MOV AX,0	; Move 0 to register AX, i.e., assign the value
-END
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://sirenexcelsior.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://sirenexcelsior.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-03-31T19:31:08+00:00</updated><id>https://sirenexcelsior.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">All Task of Assembly Language 2024</title><link href="https://sirenexcelsior.github.io/blog/2024/code/" rel="alternate" type="text/html" title="All Task of Assembly Language 2024"/><published>2024-03-30T00:00:00+00:00</published><updated>2024-03-30T00:00:00+00:00</updated><id>https://sirenexcelsior.github.io/blog/2024/code</id><content type="html" xml:base="https://sirenexcelsior.github.io/blog/2024/code/"><![CDATA[<p>This is a site for the record of all test answers for the course <a href="https://scs.math.msu.ru/node/4281">Assembly Language</a>, Spring 2024, taught by Леонов Александр Георгиевич, on the online course platform <a href="https://mirera.ru/user/groups/65cb80e98cd5ad641f4efb8b">mirera.ru</a>.</p> <h2 id="lecture-01">Lecture 01</h2> <h3 id="0-example">0 (Example)</h3> <pre><code class="language-assembly">MOV AX,0	; Move 0 to register AX, i.e., assign the value
 </code></pre> <h3 id="2000">2000</h3> <p>Write a program that puts 2000 in the AX register.</p> <pre><code class="language-assembly">MOV AX, 2000
-END
 </code></pre> <h3 id="data">Data</h3> <p>Write a program that puts data from BX in the AX register.</p> <pre><code class="language-assembly">MOV AX, BX
-END
-</code></pre>]]></content><author><name></name></author><category term="Tasks"/><category term="Code"/><category term="AssemblyLanguage"/><summary type="html"><![CDATA[Assembly Language]]></summary></entry></feed>
+</code></pre> <h3 id="sum-example">Sum (Example)</h3> <p>Run the program that puts the sum of data from BX and CX into the AX register.</p> <pre><code class="language-assembly">MOV AX,BX
+ADD AX,CX
+</code></pre> <h3 id="subtract">Subtract</h3> <p>Write a program that places the result of subtracting data CX from BX into register AX.</p> <pre><code class="language-assembly">SUB BX, CX
+MOV AX, BX
+</code></pre> <h3 id="calculate">Calculate</h3> <p>Write a program that places the result of operation into register AX.</p> <pre><code class="language-assembly">MOV AX, 0
+MOV BX, FF00
+MOV CX, F
+MOV DX, F1
+
+AND CX, DX
+OR  CX, 80
+
+MOV AX, BX
+OR  AX, C0
+ADD AX, CX
+NEG AX
+</code></pre>]]></content><author><name>SiREN</name></author><category term="Tasks"/><category term="Math"/><category term="Code"/><summary type="html"><![CDATA[all Task of Assembly Language]]></summary></entry></feed>
