@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://sirenexcelsior.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://sirenexcelsior.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-03-31T19:54:58+00:00</updated><id>https://sirenexcelsior.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">All Task of Assembly Language 2024</title><link href="https://sirenexcelsior.github.io/blog/2024/code/" rel="alternate" type="text/html" title="All Task of Assembly Language 2024"/><published>2024-03-30T00:00:00+00:00</published><updated>2024-03-30T00:00:00+00:00</updated><id>https://sirenexcelsior.github.io/blog/2024/code</id><content type="html" xml:base="https://sirenexcelsior.github.io/blog/2024/code/"><![CDATA[<p>This is a site for the record of all test answers for the course <a href="https://scs.math.msu.ru/node/4281">Assembly Language</a>, Spring 2024, taught by Леонов Александр Георгиевич, on the online course platform <a href="https://mirera.ru/user/groups/65cb80e98cd5ad641f4efb8b">mirera.ru</a>.</p> <h2 id="lecture-01---intro-registers">Lecture 01 - Intro. Registers.</h2> <h3 id="0-example">0 (Example)</h3> <pre><code class="language-assembly">MOV AX,0	; Move 0 to register AX, i.e., assign the value
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://sirenexcelsior.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://sirenexcelsior.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-03-31T20:04:26+00:00</updated><id>https://sirenexcelsior.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">All Task of Assembly Language 2024</title><link href="https://sirenexcelsior.github.io/blog/2024/code/" rel="alternate" type="text/html" title="All Task of Assembly Language 2024"/><published>2024-03-30T00:00:00+00:00</published><updated>2024-03-30T00:00:00+00:00</updated><id>https://sirenexcelsior.github.io/blog/2024/code</id><content type="html" xml:base="https://sirenexcelsior.github.io/blog/2024/code/"><![CDATA[<p>This is a site for the record of all test answers for the course <a href="https://scs.math.msu.ru/node/4281">Assembly Language</a>, Spring 2024, taught by Леонов Александр Георгиевич, on the online course platform <a href="https://mirera.ru/user/groups/65cb80e98cd5ad641f4efb8b">mirera.ru</a>.</p> <h2 id="lecture-01">Lecture 01</h2> <h3 id="0-example">0 (Example)</h3> <pre><code class="language-assembly">MOV AX,0	; Move 0 to register AX, i.e., assign the value
 </code></pre> <h3 id="2000">2000</h3> <p>Write a program that puts 2000 in the AX register.</p> <pre><code class="language-assembly">MOV AX, 2000
 </code></pre> <h3 id="data">Data</h3> <p>Write a program that puts data from BX in the AX register.</p> <pre><code class="language-assembly">MOV AX, BX
 </code></pre> <h3 id="sum-example">Sum (Example)</h3> <p>Run the program that puts the sum of data from BX and CX into the AX register.</p> <pre><code class="language-assembly">MOV AX,BX
@@ -60,7 +60,7 @@ CLC
 RCR CX
 CLC
 RCR CX
-</code></pre> <h3 id="sum">Sum</h3> <p>Write a program that puts into register AX the sum of two 8-bit numbers stored in 16-bit register BX.</p> <p>Example: \(BX = 032E_{16}\), result \(AX = 03_{16} + 2E16 = 31_{16}\).</p> <p>If BX=0, then AX=0.</p> <p>Use the shift operations RCL or RCR.</p> <p><em>Do Not forget CLC before any RCL and RCR!</em></p> <pre><code class="language-assembly">MOV AX, BX
+</code></pre> <h3 id="sum">Sum</h3> <p>Write a program that puts into register AX the sum of two 8-bit numbers stored in 16-bit register BX.</p> <p>Example: BX = \(032E_{16}\), result AX = \(03__{16} + 2E__{16}\) = \(31_{16}\).</p> <p>If BX=0, then AX=0.</p> <p>Use the shift operations RCL or RCR.</p> <p><em>Do Not forget CLC before any RCL and RCR!</em></p> <pre><code class="language-assembly">MOV AX, BX
 AND AX, 00FF
 MOV CX, BX
 
@@ -84,7 +84,7 @@ RCR CX
 ADD AX, CX
 
 END
-</code></pre> <h2 id="lecture-02---jump-and-call">Lecture 02 - Jump and Call</h2> <h3 id="zero-comparison-example">Zero Comparison (Example)</h3> <p>Run a program that compares BX and CX and sets AX=1 when BX = CX</p> <pre><code class="language-assembly">CMP BX,CX
+</code></pre> <h2 id="lecture-02">Lecture 02</h2> <h3 id="zero-comparison-example">Zero Comparison (Example)</h3> <p>Run a program that compares BX and CX and sets AX=1 when BX = CX</p> <pre><code class="language-assembly">CMP BX,CX
 JNZ ?1
 MOV AX,1
 ?1:
@@ -104,5 +104,5 @@ JMP ?02
 SUB BX, CX
 MOV AX, BX
 ?02:
-</code></pre> <h2 id="lecture-03---addressing-modes">Lecture 03 - Addressing modes</h2> <h3 id="contents-of-an-address">Contents of an Address</h3> <p>Write a program that puts the contents at address BX into register AX.</p> <pre><code class="language-assembly">MOV AX, [BX]
+</code></pre> <h2 id="lecture-03">Lecture 03</h2> <h3 id="contents-of-an-address">Contents of an Address</h3> <p>Write a program that puts the contents at address BX into register AX.</p> <pre><code class="language-assembly">MOV AX, [BX]
 </code></pre>]]></content><author><name>SiREN</name></author><category term="Tasks"/><category term="Math"/><category term="Code"/><summary type="html"><![CDATA[all Task of Assembly Language]]></summary></entry></feed>
