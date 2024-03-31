@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: interesting publications
+title: publications
 description: Here are some interesting publications for you
 nav: true
 nav_order: 2
