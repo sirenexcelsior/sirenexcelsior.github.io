@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-This personal website is being created at the moment! 😆
+This personal website is being created at the moment! 🎉
