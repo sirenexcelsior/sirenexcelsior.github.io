@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-This personal website is being created at the moment! 😆
+The first blog was posted! 😆
