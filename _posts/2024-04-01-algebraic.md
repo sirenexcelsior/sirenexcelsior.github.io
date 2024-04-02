@@ -7,15 +7,11 @@ categories: Notebooks
 date: 2024-03-30
 related_posts: true
 tikzjax: true
-thumbnail: assets/img/202404/alg.png
+thumbnail: assets/img/202404/alg.gif
 toc:
   sidebar: left
 ---
 
-```yml
-toc:
-  sidebar: left
-```
 
 ## Кольцо
 
