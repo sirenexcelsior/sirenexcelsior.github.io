@@ -8,6 +8,7 @@ date: 2024-03-30
 related_posts: true
 tikzjax: true
 thumbnail: assets/img/202404/alg.gif
+pretty_table: true
 toc:
   sidebar: left
 ---
@@ -24,12 +25,6 @@ toc:
    $$𝑎 \cdot (𝑏 + 𝑐) = 𝑎 \cdot 𝑏 + 𝑎 \cdot 𝑐$$
 
    $$(𝑏 + 𝑐) \cdot 𝑎 = 𝑏 \cdot 𝑎 + 𝑐 \cdot 𝑎$$
-   
-| Left aligned | Center aligned | Right aligned |
-| :----------- | :------------: | ------------: |
-| Left 1       |    center 1    |       right 1 |
-| Left 2       |    center 2    |       right 2 |
-| Left 3       |    center 3    |       right 3 |
 
 
 |   +          |   ·            |   ·(+)    |
