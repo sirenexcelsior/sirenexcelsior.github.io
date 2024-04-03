@@ -20,6 +20,8 @@ toc:
 >
 > RUBEN WIERSMA, AHMAD NASIKUN等
 >
+> GitHub：[deltaconv](https://github.com/rubenwiersma/deltaconv)
+>
 > 翻译自：{% cite wiersma2022deltaconv %}
 
 ## 摘要
@@ -116,9 +118,20 @@ x_i^{(l+1)} = h_{\theta_0}\left(x_i^{(l)}\right) + \max_{j \in \mathcal{N}(i)} h
 
 点云通常包含欠采样区域和噪声。这对移动最小二乘法过程可能是个问题。考虑图 3 中的一个例子，一把腿细的椅子。只有少数点沿着构成椅子腿的线排列。因此，垂直于线的方向是欠采样的，导致在一个不稳定的最小二乘拟合中：一点的微小扰动可能严重影响结果（左侧，圈出区域）。我们通过添加一个由 $$ \lambda $$ 缩放的正则化项到最小二乘拟合过程中，试图减轻这种效应（右侧）。这是一个被称为岭回归或Tikhonov正则化的已知技术。
 
-我们还主张梯度算子应该被规范化，这一观点是由信息在网络中如何融合激发的。如果 $$ G $$ 表现出发散或收敛行为，由 $$ G $$ 产生的特征也将发散或收敛。当梯度在网络中被多次应用时，这是不可取的。由梯度操作产生的特征将具有不同的数量级，网络权重需要考虑这一点。因此，我们通过 $$ \ell^{\infty} $$ 算子范数规范化 $$ G $$，提供了一个操作员缩放行为的上界
+我们还主张梯度算子应该被规范化，这一观点是由信息在网络中如何融合激发的。如果 $$ G $$ 表现出发散或收敛行为，由 $$ G $$ 产生的特征也将发散或收敛。当梯度在网络中被多次应用时，这是不可取的。由梯度操作产生的特征将具有不同的数量级，网络权重需要考虑这一点。因此，我们通过 $$ \ell^{\infty} $$ 算子范数规范化 $$ G $$，提供了一个操作子缩放行为的上界
 
 \begin{equation}
-\hat{G} = \frac{G}{|G|_{\infty}}, \quad \text{其中} |G|_{\infty} = \max_i \sum_j |G_{ij}|
+\hat{G} = \frac{G}{\|G\|_{\infty}}, \quad \text{其中} \|G\|_{\infty} = \max_i \sum_j \|G_{ij}\|
 
 \end{equation}
+
+<div class="row mt-3">
+    <div class="col-12 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/202404/deltaconv_3.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+<div class="caption">
+    图 3. 椅子上 x 坐标的梯度，未进行正则化处理（左图），已进行正则化处理（右图）。
+</div>
+
