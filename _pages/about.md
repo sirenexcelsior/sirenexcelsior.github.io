@@ -15,4 +15,4 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Artificial neural network student studying at [the Department of Mechanics and Mathematics](https://math.msu.ru), Moscow State University.
+Hi, I am a student studying Artificial Neural Networks in the [Chair of Mathematical Theory of Intelligent Systems](http://intsys.msu.ru) at [the Department of Mechanics and Mathematics](https://math.msu.ru), Moscow State University and my science advisor is [Prof. Dr. Sc. Chasovskikh](http://intsys.msu.ru/staff/chasovskikh/). Currently I am working on a task related to "geometric deep learning" and "protein surface binding site identification".
