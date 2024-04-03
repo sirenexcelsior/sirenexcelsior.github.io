@@ -100,11 +100,11 @@ toc:
 
 在标量流内部应用了一个简化版的基于点的 MLP（多层感知机），基于 PointNet++ [Qi et al. 2017b] 和 EdgeConv [Wang et al. 2019]。我们对每个点应用一个 MLP 然后对一个 $$ k $$-最近邻居 $$ \mathcal{N}(i) $$ 执行最大值聚合。标量流中的特征被计算为
 
-\begin{equation}
+$$
 
 x_i^{(l+1)} = h_{\theta_0}\left(x_i^{(l)}\right) + \max_{j \in \mathcal{N}(i)} h_{\theta_1}\left(x_j^{(l)}\right)
 
-\end{equation}
+$$
 
 其中 $$ h_{\theta_0} $$ 和 $$ h_{\theta_1} $$ 表示多层感知机（MLP），由全连接层、批量归一化 [Ioffe and Szegedy 2015] 和非线性函数组成。如果点位置被用作输入，它们会在最大聚合之前中心化：$$ \hat{p}_j = p_j - p_i $$。
 
@@ -120,10 +120,10 @@ x_i^{(l+1)} = h_{\theta_0}\left(x_i^{(l)}\right) + \max_{j \in \mathcal{N}(i)} h
 
 我们还主张梯度算子应该被规范化，这一观点是由信息在网络中如何融合激发的。如果 $$ G $$ 表现出发散或收敛行为，由 $$ G $$ 产生的特征也将发散或收敛。当梯度在网络中被多次应用时，这是不可取的。由梯度操作产生的特征将具有不同的数量级，网络权重需要考虑这一点。因此，我们通过 $$ \ell^{\infty} $$ 算子范数规范化 $$ G $$，提供了一个操作子缩放行为的上界
 
-\begin{equation}
+$$
 \hat{G} = \frac{G}{\|G\|_{\infty}}, \quad \text{其中} \|G\|_{\infty} = \max_i \sum_j \|G_{ij}\|
 
-\end{equation}
+$$
 
 <div class="row mt-3">
     <div class="col-12 mt-3 mt-md-0">
@@ -135,3 +135,24 @@ x_i^{(l+1)} = h_{\theta_0}\left(x_i^{(l)}\right) + \max_{j \in \mathcal{N}(i)} h
     图 3. 椅子上 x 坐标的梯度，未进行正则化处理（左图），已进行正则化处理（右图）。
 </div>
 
+### 矢量到标量：散度、旋度和范数
+
+矢量流通过散度、旋度和范数连接回标量流。这些算子通常用来分析矢量场，并指示诸如汇点、源点、旋涡以及矢量场的强度等特征。网络可以使用它们作为各向异性算子的构建块。 离散散度也是用移动最小二乘法构建的，该方法在补充材料中有描述。散度表示为一个稀疏矩阵 $$D \in \mathbb{R}^{N \times 2N} $$，有 $$2kN $$ 个元素。旋度被导出为 \(-DJ$$。
+
+### 矢量到矢量：Hodge Laplacian
+
+矢量特征在矢量流中通过身份矩阵 $$I $$ 和 Hodge Laplacian $$\Delta $$ 的组合进行扩散。将 Hodge Laplacian 应用于矢量场 $$V $$ 会得到另一个矢量场，它编码了每个点及其邻居的矢量之间的差异。Hodge Laplacian 可以被构造为梯度（grad）、散度（div）、旋度（curl）和 $$\mathcal{J} $$ 的组合 [Brandt et al. 2017]。 
+
+$$
+
+\Delta = -(\text{grad div} + \mathcal{J} \text{ grad curl})
+
+$$
+
+在离散设置中，我们用其离散变体替换每个算子
+
+$$
+
+L = -(GD - JGDJ)
+
+$$
