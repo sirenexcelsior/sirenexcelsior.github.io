@@ -101,9 +101,7 @@ toc:
 在标量流内部应用了一个简化版的基于点的 MLP（多层感知机），基于 PointNet++ [Qi et al. 2017b] 和 EdgeConv [Wang et al. 2019]。我们对每个点应用一个 MLP 然后对一个 $$ k $$-最近邻居 $$ \mathcal{N}(i) $$ 执行最大值聚合。标量流中的特征被计算为
 
 $$
-
 x_i^{(l+1)} = h_{\theta_0}\left(x_i^{(l)}\right) + \max_{j \in \mathcal{N}(i)} h_{\theta_1}\left(x_j^{(l)}\right)
-
 $$
 
 其中 $$ h_{\theta_0} $$ 和 $$ h_{\theta_1} $$ 表示多层感知机（MLP），由全连接层、批量归一化 [Ioffe and Szegedy 2015] 和非线性函数组成。如果点位置被用作输入，它们会在最大聚合之前中心化：$$ \hat{p}_j = p_j - p_i $$。
@@ -122,7 +120,6 @@ $$
 
 $$
 \hat{G} = \frac{G}{\|G\|_{\infty}}, \quad \text{其中} \|G\|_{\infty} = \max_i \sum_j \|G_{ij}\|
-
 $$
 
 <div class="row mt-3">
@@ -144,17 +141,13 @@ $$
 矢量特征在矢量流中通过身份矩阵 $$I $$ 和 Hodge Laplacian $$\Delta $$ 的组合进行扩散。将 Hodge Laplacian 应用于矢量场 $$V $$ 会得到另一个矢量场，它编码了每个点及其邻居的矢量之间的差异。Hodge Laplacian 可以被构造为梯度（grad）、散度（div）、旋度（curl）和 $$\mathcal{J} $$ 的组合 [Brandt et al. 2017]。 
 
 $$
-
 \Delta = -(\text{grad div} + \mathcal{J} \text{ grad curl})
-
 $$
 
 在离散设置中，我们用其离散变体替换每个算子，
 
 $$
-
 L = -(GD - JGDJ)
-
 $$
 
 ### 为什么选择这些算子？
@@ -190,9 +183,6 @@ $$ x_i' = h_{\theta_1}(x_i, (DV)'_i, (-DJV)'_i, ||v'_i||) + \max_{j \in \mathcal
 <div class="caption">
     图 4. DeltaConv 原理图
 </div>
-
-这段内容的翻译如下：
-
 这意味着它们不对单独的向量系数工作，并且是坐标无关的。回想一下，$$ V \in \mathbb{R}^{2N\times C^{(l)}} $$将每个点的向量系数交织在列中。向量MLP被应用到$$ V $$上，如下所示：
 
 $$V' = \sigma(VW)\quad (7)$$
