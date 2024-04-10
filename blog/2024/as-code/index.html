@@ -1060,4 +1060,240 @@ _start:
     call printInt
     mov rax, 60
     syscall
-</code></pre> <h3 id="the-sum-of-pairwise-products">The sum of pairwise products</h3> <p>Find the sum of all pairwise products of a sequence</p> <p>A sequence of integers in the input stream.</p> <p>Answer to the output stream.</p> <p>In the case of an empty sequence, the program exit code is -1.</p> <blockquote> <p>Assuming that we have only one chance to read the array and we don’t want to request dynamic memory, the problem must be solved in \(O(n)\), and that requires a formula:</p> \[SUM = \frac{1}{2}((\sum_{i=1}^na_i)^2-\sum_{i=1}^na_i^2)\] </blockquote> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/linux-common/">Linux Basic Command Manual</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/deltaconv/">DeltaConv：用于点云几何深度学习的各向异性算子</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/as-point/">Some points of Assembly Language 2024</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/algebraic/">Доп. главы по алгебре - Кольцо</a> </li> <div id="giscus_thread" style="max-width: 800px; margin: 0 auto;"> <script>let giscusTheme=determineComputedTheme(),giscusAttributes={src:"https://giscus.app/client.js","data-repo":"sirenexcelsior/sirenexcelsior.github.io","data-repo-id":"R_kgDOLnzSTQ","data-category":"Announcements","data-category-id":"DIC_kwDOLnzSTc4CeXpT","data-mapping":"title","data-strict":"1","data-reactions-enabled":"1","data-emit-metadata":"0","data-input-position":"bottom","data-theme":giscusTheme,"data-lang":"en",crossorigin:"anonymous",async:""},giscusScript=document.createElement("script");Object.entries(giscusAttributes).forEach(([t,e])=>giscusScript.setAttribute(t,e)),document.getElementById("giscus_thread").appendChild(giscusScript);</script> <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a> </noscript> </div> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2024 Wang Siren. Powered by al-folio. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://tikzjax.com/v1/tikzjax.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="/assets/js/bootstrap-toc.min.js?c82ff4de8b0955d6ff14f5b05eed7eb6"></script> <script src="/assets/js/no_defer.js?5d75c11f89cd96294bf5e6dd1ee1bb30"></script> <script defer src="/assets/js/common.js?fcfacfb8c6281f5e68d5a7d348186eb1"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> <script>var wechatModal=document.getElementById("WeChatMod"),wechatBtn=document.getElementById("WeChatBtn");wechatBtn.onclick=function(){wechatModal.style.display="block"},window.onclick=function(t){t.target==wechatModal&&(wechatModal.style.display="none")};</script> </body> </html>
+</code></pre> <h3 id="the-sum-of-pairwise-products">The sum of pairwise products</h3> <p>Find the sum of all pairwise products of a sequence</p> <p>A sequence of integers in the input stream.</p> <p>Answer to the output stream.</p> <p>In the case of an empty sequence, the program exit code is -1.</p> <blockquote> <p>Assuming that we have only one chance to read the array and we don’t want to request dynamic memory, the problem must be solved in \(O(n)\), and that requires a formula:</p> \[SUM = \frac{1}{2}((\sum_{i=1}^na_i)^2-\sum_{i=1}^na_i^2)\] </blockquote> <pre><code class="language-assembly">extern printEndl, printInt, inputInt, printHex
+%include 'conio.h'
+
+section .text
+global _start
+
+_start:
+
+    xor ebx, ebx
+    xor ecx, ecx
+    
+    call inputInt
+    jz .errexit
+    
+    add ebx, eax
+    mul eax
+    add ecx, eax
+    
+    call inputInt
+    jz .errexit
+    
+    add ebx, eax
+    mul eax
+    add ecx, eax
+    
+.lp:
+    call inputInt
+    jz .endlp
+    add ebx, eax
+    mul eax
+    add ecx, eax
+    jmp .lp
+    
+.errexit:
+    mov rdi, -1
+    mov rax, 60
+    syscall
+
+.endlp:
+    mov eax, ebx
+    mul eax
+    sub eax, ecx
+    clc
+    rcr eax, 1
+    call printInt
+    
+.exit:
+    mov rdi, 0
+    mov rax, 60
+    syscall
+</code></pre> <h3 id="copy-array">Copy array</h3> <p>An array of integers is located in the file input stream. It is required to create an array of N&lt;100 elements and read the array.</p> <p>You need to copy all array to the output stream.</p> <p>In the case of an empty sequence, the program exit code is -1.</p> <pre><code class="language-assembly">; External function declarations
+extern printEndl, printInt, inputInt, printHex
+%include 'conio.h'  ; Include the conio.h library for console input-output support
+
+section .bss
+A:resd 100  ; Allocate space for an array, defining array A to hold 100 integers
+
+section .text
+global _start  ; Declare _start as globally visible so that the linker can find the entry point of the program
+
+_start:  ; Start of the program
+
+mov ecx,0   ; Initialize counter ecx to 0, for array indexing
+mov ebx,A   ; Assign the address of array A to ebx, for subsequent read/write operations
+
+.readA:  ; Label for reading input
+call inputInt  ; Call inputInt to read an integer from standard input into eax
+jz .eofA  ; If the input is 0, jump to .eofA to handle end-of-file condition
+mov [A+ecx*4],eax;  ; Store the read integer at the corresponding position in array A
+inc ecx  ; Increase the value of ecx, moving to the next position in the array
+jmp .readA  ; Jump back to .readA to continue reading the next integer
+
+.eofA:  ; Handle end-of-input condition
+mov rdi,-1  ; Store -1 in rdi, set as error return code
+test ecx,ecx  ; Test if ecx is 0 (i.e., if the array is empty)
+jz .exit  ; If the array is empty, jump directly to .exit to exit the program
+
+mov ebx,A  ; Reset ebx to the starting address of array A
+.writeA:  ; Start writing label
+mov eax,[ebx]  ; Read the current element from array A into eax
+call printInt  ; Call printInt to print the value of eax
+call printEndl  ; Print a newline
+add ebx,4  ; Move ebx to the next element in the array
+loop .writeA  ; Use ecx as a counter to loop through .writeA using the loop instruction
+
+xor rdi, rdi ; Clear rdi, set as success return code
+
+.exit:  ; Exit label
+mov rax, 60  ; Set rax to 60, corresponding to the sys_exit system call number
+syscall  ; Perform a system call to exit the program
+</code></pre> <h3 id="sort-array">Sort array</h3> <p>An array of integers is located in the file input stream. It is required to create an array of N&lt;100 elements and read the array.</p> <p>You need to sort an array of integers in ascending order to the output stream.</p> <p>In the case of an empty sequence, the program exit code is -1.</p> <pre><code class="language-assembly">; External function declarations
+extern printEndl, printInt, inputInt, printHex
+%include 'conio.h'  ; Includes the conio.h library for console input-output support
+
+section .bss
+A:resd 100  ; Reserves space for an array of 100 integers
+
+section .text
+global _start  ; Declares _start as globally visible, marking the entry point of the program
+
+_start:  ; Program start
+
+mov ecx, 0  ; Clears the ecx register, to be used as the array index
+mov ebx, A  ; Loads the address of array A into ebx for array operations
+.readA:  ; Start of the loop to read the array
+call inputInt  ; Calls inputInt function to read an integer from standard input
+jz .eofA  ; If input is zero, jump to .eofA to handle end of input
+mov [A+ecx*4], eax;  ; Stores the input integer at the current index position in the array
+inc ecx  ; Increments index, preparing to read the next value
+jmp .readA  ; Jumps back to the start of the read loop
+
+.eofA:
+mov rdi, -1  ; Sets return error code to -1
+test ecx, ecx  ; Tests if ecx is zero, i.e., if the array is empty
+jz .exit  ; If the array is empty, jumps to exit
+
+mov ebx, A  ; Resets ebx to point to the start of the array
+call _sort  ; Calls the _sort function to sort the array
+
+mov ebx, A  ; Again sets ebx to point to the start of the array
+.writeA:  ; Starts the loop to write the array
+mov eax, [ebx]  ; Reads the current element from the array
+call printInt  ; Calls printInt to print the current integer
+call printEndl  ; Calls printEndl to print a newline
+add ebx, 4  ; Moves to the next element in the array
+loop .writeA  ; Continues to output using loop instruction until ecx decrements to zero
+
+xor rdi, rdi ; Clears the rdi register, sets the success return code
+
+.exit:
+mov rax, 60  ; Sets rax to 60, corresponding to the sys_exit system call
+syscall  ; Performs a system call to exit the program
+
+_sort:
+pushq  ; Saves register state
+dec ecx  ; Decrement array length by one, preparing for sorting
+.?loop1:  ; Label for the first loop
+push rcx
+push rbx
+
+.?loop2:  ; Label for the second loop
+
+mov eax, [ebx]  ; Takes the current element from the array
+cmp eax, [ebx+4]  ; Compares it with the next element
+jle .?1  ; If the current element is less than or equal to the next, skip swapping
+xchg eax, [ebx+4]  ; Swaps the two elements
+mov [ebx], eax
+
+.?1:
+add bx, 4  ; Moves to the next element
+loop .?loop2  ; Continues the inner loop
+
+pop rbx
+pop rcx
+loop .?loop1  ; Continues the outer loop
+popq  ; Restores register state
+ret  ; Returns to the calling point
+</code></pre> <h3 id="even-strange-odd">Even strange (Odd)</h3> <p>An array of integers is located in the file input stream. It is required to create an array of N&lt;100 elements and read the array.</p> <p>You need to output:</p> <p>- the maximum even element, if the number of even elements is not less than the number of odd ones;</p> <p>- the maximum odd element, if the number of odd elements is greater than even ones.</p> <p>For example, for an array of six elements equal to 4, 6, 12, 17, 3, 8, respectively, the answer will be 12 - the largest even number, since there are more even numbers in this array.</p> <p>Answer to the output stream.</p> <p>In the case of an empty sequence, the program exit code is -1.</p> <blockquote> <p>The -2147483648 set here is the smallest negative number that can be stored in a 32-bit register, i.e. it ranges from -2147483648 to 2147483647.</p> <p>The test instruction is essentially a logical and arithmetic instruction, but it does not save the result of the operation; if the result of the operation is 0, then ZF = 1, for example:</p> <pre><code class="language-assembly">test al, 1
+jz even  ; If the lowest bit of al is 0, then jump to the even tag and al is an even number
+
+test ebx, ebx
+jz is_zero  ; If ebx is 0, jump to is_zero tag
+</code></pre> </blockquote> <pre><code class="language-assembly">extern printEndl, printInt, inputInt, printHex
+%include 'conio.h'
+
+section .bss
+A:resd 100  ; space for an array
+
+section .text
+global _start
+
+_start:
+
+    mov ecx, 0      
+    mov ebx, A      
+    
+    mov edi, -2147483648  
+    mov esi, -2147483648  
+    mov edx, 0            
+    mov ebp, 0            
+
+.read_loop:
+    call inputInt        
+    test eax, eax        
+    jz .finalize          
+    mov [ebx+ecx*4], eax 
+    inc ecx              
+
+    
+    test eax, 1          
+    jnz .odd_number 
+    
+.even_number:
+    inc edx              
+    cmp eax, esi         
+    jle .skip_even        
+    mov esi, eax         
+    jmp .skip_odd
+    
+.odd_number:
+    inc ebp              
+    cmp eax, edi         
+    jle .skip_odd        
+    mov edi, eax  
+    
+.skip_odd:
+.skip_even:
+    jmp .read_loop      
+
+.finalize:    
+    test ecx, ecx
+    jz .empty_array      
+
+    
+    cmp ebp, edx         
+    jg .output_odd    
+    
+.output_even:
+    mov eax, esi        
+    jmp .output
+    
+.output_odd:
+    mov eax, edi      
+    
+.output:
+    call printInt       
+    call printEndl      
+    xor rdi, rdi        
+    jmp .exit_program
+
+.empty_array:
+    mov rdi, -1          
+
+.exit_program:
+    mov rax, 60          
+    syscall              
+</code></pre> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/linux-common/">Linux Basic Command Manual</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/deltaconv/">DeltaConv：用于点云几何深度学习的各向异性算子</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/as-point/">Some points of Assembly Language 2024</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/algebraic/">Доп. главы по алгебре - Кольцо</a> </li> <div id="giscus_thread" style="max-width: 800px; margin: 0 auto;"> <script>let giscusTheme=determineComputedTheme(),giscusAttributes={src:"https://giscus.app/client.js","data-repo":"sirenexcelsior/sirenexcelsior.github.io","data-repo-id":"R_kgDOLnzSTQ","data-category":"Announcements","data-category-id":"DIC_kwDOLnzSTc4CeXpT","data-mapping":"title","data-strict":"1","data-reactions-enabled":"1","data-emit-metadata":"0","data-input-position":"bottom","data-theme":giscusTheme,"data-lang":"en",crossorigin:"anonymous",async:""},giscusScript=document.createElement("script");Object.entries(giscusAttributes).forEach(([t,e])=>giscusScript.setAttribute(t,e)),document.getElementById("giscus_thread").appendChild(giscusScript);</script> <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a> </noscript> </div> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2024 Wang Siren. Powered by al-folio. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://tikzjax.com/v1/tikzjax.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="/assets/js/bootstrap-toc.min.js?c82ff4de8b0955d6ff14f5b05eed7eb6"></script> <script src="/assets/js/no_defer.js?5d75c11f89cd96294bf5e6dd1ee1bb30"></script> <script defer src="/assets/js/common.js?fcfacfb8c6281f5e68d5a7d348186eb1"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> <script>var wechatModal=document.getElementById("WeChatMod"),wechatBtn=document.getElementById("WeChatBtn");wechatBtn.onclick=function(){wechatModal.style.display="block"},window.onclick=function(t){t.target==wechatModal&&(wechatModal.style.display="none")};</script> </body> </html>
