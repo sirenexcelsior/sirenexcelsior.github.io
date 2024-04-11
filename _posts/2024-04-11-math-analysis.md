@@ -109,8 +109,8 @@ $$\exists x_{c'} \in A:x_{c'}>c'$$
 
 Будем двигаться по клеткам этой таблицы из левого верхнего угла по следующему пути:
 
-<div class="row mt-3">
-    <div class="col-2 mt-3 mt-md-0">
+<div class="row mt-3 justify-content-center">
+    <div class="col-3 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/202404/math_analysis_2.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
