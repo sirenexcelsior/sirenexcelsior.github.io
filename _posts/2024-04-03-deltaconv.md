@@ -215,7 +215,7 @@ DeltaConv是坐标无关的，这意味着在DeltaConv中使用的权重并不�
 
 ### 实施细节
 
-在我们的实验中，我们使用基于DGCNN [Wang et al. 2019]的网络架构。我们用DeltaConv块替换了每个EdgeConv块（见图4），并且没有使用动态图组件。这些网络在局部邻域上单一尺度运作。尽管架构简单，DeltaConv仍然实现了最先进的结果。为了展示架构优化对DeltaConv的意义，我们还测试了在KPFCNN [Thomas et al. 2019]中使用的U-ResNet架构，但是将编码器中的卷积块用DeltaConv块替换。在下采样块中，我们通过平行运输池化向量特征[Wiersma et al. 2020]。更多细节在补充材料中提供。代码可在https://github.com/rubenwiersma/deltaconv上获取。
+在我们的实验中，我们使用基于DGCNN [Wang et al. 2019]的网络架构。我们用DeltaConv块替换了每个EdgeConv块（见图4），并且没有使用动态图组件。这些网络在局部邻域上单一尺度运作。尽管架构简单，DeltaConv仍然实现了最先进的结果。为了展示架构优化对DeltaConv的意义，我们还测试了在KPFCNN [Thomas et al. 2019]中使用的U-ResNet架构，但是将编码器中的卷积块用DeltaConv块替换。在下采样块中，我们通过平行运输池化向量特征[Wiersma et al. 2020]。更多细节在补充材料中提供。代码可在 [deltaconv](https://github.com/rubenwiersma/deltaconv) 上获取。
 
 数据变换。对于每个形状，计算一个k-n图，用于标量流中的最大化聚合。当必要时，它被用来估算法线并构建梯度。在每项实验中，我们将xyz坐标作为输入来使用网络，并且使用随机尺度和平移，类似于先前工作的数据增强。一些数据集需要特定的增强，这些在它们各自的部分有详细说明。
 
