@@ -17,6 +17,8 @@ toc:
 - [Лекции по математическому анализу](https://sirenexcelsior.github.io/assets/pdf/math_analysis/Лекции_по_математическому_анализу.pdf)
 - [Сборник задач и упражнений по математическому анализу](https://sirenexcelsior.github.io/assets/pdf/math_analysis/Сборник_задач_и_упражнений_по_математическому_анализу.pdf)
 - [吉米多维奇数学分析习题集](https://sirenexcelsior.github.io/assets/pdf/math_analysis/俄罗斯数学教材选译_10_数学分析习题集根据2010年俄文版翻译_俄Б_П_吉米多维奇_高等教育出版社_2010.pdf)
+- [Математический анализ в задачах и упражнениях том 1](https://sirenexcelsior.github.io/assets/pdf/math_analysis/Математический_анализ_в_задачах_и_упражнениях_том_1.pdf)
+- [Математический анализ в задачах и упражнениях том 3](https://sirenexcelsior.github.io/assets/pdf/math_analysis/Математический_анализ_в_задачах_и_упражнениях_том_3.pdf)
 
 ## Действительные числа
 
