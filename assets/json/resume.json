@@ -1,0 +1,62 @@
+{
+  "basics": {
+    "name": "Wang Siren",
+    "label": "",
+    "image": "",
+    "email": "sirenexcelsior@gmail.com",
+    "phone": "",
+    "url": "https://sirenexcelsior.github.io",
+    "summary": "a student studying Artificial Neural Networks in the Chair of Mathematical Theory of Intelligent Systems at the Department of Mechanics and Mathematics, Moscow State University.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Moscow",
+      "countryCode": "RU",
+      "region": "Moscow"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "sirenexcelsior",
+        "url": "https://github.com/sirenexcelsior"
+      }
+    ]
+  },
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "Native speaker",
+      "icon": "🇨🇳"
+    },
+    {
+      "language": "English",
+      "fluency": "",
+      "icon": ""
+    },
+    {
+      "language": "Russian",
+      "fluency": "",
+      "icon": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "Math",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Intelligent systems",
+        "Differential geometry",
+        "Discrete Mathematics"
+      ]
+    },
+    {
+      "name": "Neural Network",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Geometric Deep Learning",
+        "Geodesic Convolutional Neural Networks",
+        "Graph Neural Networks"
+      ]
+    }
+  ]
+}
