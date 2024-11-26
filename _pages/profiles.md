@@ -2,7 +2,7 @@
 layout: profiles
 permalink: /people/
 title: people
-description: 
+description: Page under construction.
 nav: true
 nav_order: 7
 

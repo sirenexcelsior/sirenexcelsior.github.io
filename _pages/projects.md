@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Page under construction
+description: Some interesting projects will be shown here.
 nav: true
 nav_order: 3
 display_categories: [Pytorch, MatLab]
