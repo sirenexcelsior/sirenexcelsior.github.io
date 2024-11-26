@@ -4,7 +4,7 @@ title: SE(3)-Transformer Model Analysis
 description: a project for analysis of SE(3)-Transformer
 img: assets/img/202411/se3.png
 importance: 1
-category: MatLab
+category: Pytorch
 related_publications: true
 ---
 
