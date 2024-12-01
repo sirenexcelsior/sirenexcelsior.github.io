@@ -3,7 +3,7 @@ layout: page
 title: 麻雀山论坛宣传物料
 description: 
 img: assets/img/202411/Vor/logo.png
-importance: 1
+importance: 3
 category: Others
 pretty_table: true
 ---
