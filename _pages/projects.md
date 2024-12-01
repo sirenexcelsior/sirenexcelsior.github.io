@@ -5,7 +5,7 @@ permalink: /projects/
 description: Some interesting projects will be shown here.
 nav: true
 nav_order: 3
-display_categories: [Pytorch, MatLab]
+display_categories: [Pytorch, MatLab, Others]
 horizontal: false
 ---
 
