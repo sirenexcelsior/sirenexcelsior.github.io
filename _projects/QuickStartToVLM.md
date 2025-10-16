@@ -1,10 +1,10 @@
 ---
 layout: page
-title: a project for an exp.
-description: a project for an exp.
+title: Quick Start To VLM
+description: Quick Start To VLM
 img: assets/img/202510/vlm.png
 importance: 1
-category: Pytorch
+category: Guide
 related_publications: true
 ---
 
