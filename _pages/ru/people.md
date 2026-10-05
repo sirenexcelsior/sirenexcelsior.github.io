@@ -22,4 +22,3 @@ profiles:
     image_circular: false
     content: people/chasovskikh.md
 ---
-
