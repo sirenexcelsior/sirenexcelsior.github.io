@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /ru/teaching/
 layout: page
 permalink: /teaching/
 title: teaching

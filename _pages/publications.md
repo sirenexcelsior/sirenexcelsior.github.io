@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /ru/publications/
 layout: page
 permalink: /publications/
 title: publications

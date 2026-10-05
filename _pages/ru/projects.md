@@ -1,20 +1,20 @@
 ---
-lang: en
-translation_url: /ru/projects/
 layout: page
-title: projects
-permalink: /projects/
-description:
-nav: true
-nav_order: 3
+lang: ru
+translation_url: /projects/
+permalink: /ru/projects/
+title: Проекты
+nav: false
 display_categories: [Guide, Pytorch, MatLab, Others]
 horizontal: false
 ---
 
+
+
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.projects.size == 0 %}
-  <p>No projects listed yet.</p>
+  <p>Проектов пока нет.</p>
 {% else %}
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->

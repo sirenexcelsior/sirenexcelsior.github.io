@@ -1,0 +1,48 @@
+en:
+  name: Wang Siren
+  home: /
+  current: (current)
+  toggle_navigation: Toggle navigation
+  change_theme: Change theme
+  switch_language: Перейти на русский
+  copyright: Copyright
+  powered_by: Powered by al-folio.
+  last_updated: 'Last updated:'
+  news: news
+  latest_posts: latest posts
+  selected_publications: selected publications
+  contact_note: You can also reach me in these ways above.
+  navigation:
+    about: about
+    blog: blog
+    publications: publications
+    projects: projects
+    repositories: repositories
+    cv: cv
+    teaching: teaching
+    people: people
+    submenus: submenus
+ru:
+  name: Ван Сыжэнь
+  home: /ru/
+  current: (текущая страница)
+  toggle_navigation: Открыть меню
+  change_theme: Сменить тему
+  switch_language: Switch to English
+  copyright: Все права защищены
+  powered_by: На основе al-folio.
+  last_updated: 'Последнее обновление:'
+  news: Новости
+  latest_posts: Последние записи
+  selected_publications: Избранные публикации
+  contact_note: Вы также можете связаться со мной указанными выше способами.
+  navigation:
+    about: Обо мне
+    blog: Блог
+    publications: Публикации
+    projects: Проекты
+    repositories: Репозитории
+    cv: Резюме
+    teaching: Преподавание
+    people: Люди
+    submenus: Разделы

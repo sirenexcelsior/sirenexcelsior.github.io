@@ -1,15 +1,16 @@
 ---
-lang: en
-translation_url: /ru/repositories/
 layout: page
-permalink: /repositories/
-title: repositories
-description: Here are some interesting Github projects recommended for you.
-nav: true
-nav_order: 4
+lang: ru
+translation_url: /repositories/
+permalink: /ru/repositories/
+title: Репозитории
+nav: false
+description: Рекомендуемые проекты на GitHub.
 ---
 
-## GitHub users
+
+
+## Пользователи GitHub
 
 {% if site.data.repositories.github_users %}
 
@@ -37,7 +38,7 @@ nav_order: 4
 {% endif %}
 {% endif %}
 
-## GitHub Repositories
+## Репозитории GitHub
 
 {% if site.data.repositories.github_repos %}
 

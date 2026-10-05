@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /ru/
 layout: about
 title: about
 permalink: /

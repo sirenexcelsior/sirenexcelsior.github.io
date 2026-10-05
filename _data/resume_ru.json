@@ -1,0 +1,62 @@
+{
+  "basics": {
+    "name": "Ван Сыжэнь",
+    "label": "",
+    "image": "",
+    "email": "sirenexcelsior@gmail.com",
+    "phone": "",
+    "url": "https://sirenexcelsior.github.io",
+    "summary": "Изучаю искусственные нейронные сети на кафедре математической теории интеллектуальных систем механико-математического факультета МГУ.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Москва",
+      "countryCode": "RU",
+      "region": "Москва"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "sirenexcelsior",
+        "url": "https://github.com/sirenexcelsior"
+      }
+    ]
+  },
+  "languages": [
+    {
+      "language": "Китайский",
+      "fluency": "Родной язык",
+      "icon": "🇨🇳"
+    },
+    {
+      "language": "Английский",
+      "fluency": "",
+      "icon": ""
+    },
+    {
+      "language": "Русский",
+      "fluency": "",
+      "icon": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "Математика",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Интеллектуальные системы",
+        "Дифференциальная геометрия",
+        "Дискретная математика"
+      ]
+    },
+    {
+      "name": "Нейронные сети",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Геометрическое глубокое обучение",
+        "Геодезические свёрточные нейронные сети",
+        "Графовые нейронные сети"
+      ]
+    }
+  ]
+}

@@ -1,11 +1,10 @@
 ---
-lang: en
-translation_url: /ru/blog/
 layout: default
-permalink: /blog/
-title: blog
-nav: true
-nav_order: 1
+lang: ru
+translation_url: /blog/
+permalink: /ru/blog/
+title: Блог
+nav: false
 pagination:
   enabled: true
   collection: posts
@@ -14,9 +13,11 @@ pagination:
   sort_field: date
   sort_reverse: true
   trail:
-    before: 1 # The number of links before the current page
-    after: 3 # The number of links after the current page
+    before: 1
+    after: 3
 ---
+
+
 
 <div class="post">
 
@@ -27,7 +28,7 @@ pagination:
 
   <div class="header-bar">
     <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
+    <h2>Делюсь своими знаниями и опытом</h2>
   </div>
   {% endif %}
 
@@ -86,7 +87,7 @@ pagination:
                     {% assign year = post.date | date: "%Y" %}
 
                     <p class="post-meta">
-                      {{ read_time }} min read &nbsp; &middot; &nbsp;
+                      {{ read_time }} мин. чтения &nbsp; &middot; &nbsp;
                       <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
                         <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
                     </p>
@@ -143,8 +144,8 @@ pagination:
       </h3>
       <p>{{ post.description }}</p>
       <p class="post-meta">
-        {{ read_time }} min read &nbsp; &middot; &nbsp;
-        {{ post.date | date: '%B %d, %Y' }}
+        {{ read_time }} мин. чтения &nbsp; &middot; &nbsp;
+        {{ post.date | date: '%d.%m.%Y' }}
         {% if post.external_source %}
         &nbsp; &middot; &nbsp; {{ post.external_source }}
         {% endif %}

@@ -1118,3 +1118,12 @@ swiper-container {
   --swiper-pagination-color: var(--global-theme-color);
   --swiper-pagination-bullet-inactive-color: var(--global-text-color);
 }
+
+// Leave room for translated navigation labels and the language switch.
+#navbar > .container {
+  max-width: 1200px;
+}
+
+#language-toggle {
+  font-weight: 500;
+}
