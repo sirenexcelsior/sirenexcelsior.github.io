@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Some interesting projects will be shown here.
+description:
 nav: true
 nav_order: 3
 display_categories: [Guide, Pytorch, MatLab, Others]
@@ -11,6 +11,9 @@ horizontal: false
 
 <!-- pages/projects.md -->
 <div class="projects">
+{% if site.projects.size == 0 %}
+  <p>No projects listed yet.</p>
+{% else %}
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
@@ -61,5 +64,6 @@ horizontal: false
     {% endfor %}
   </div>
   {% endif %}
+{% endif %}
 {% endif %}
 </div>

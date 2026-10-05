@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Here are some interesting publications for you
+description:
 nav: true
 nav_order: 2
 ---
@@ -10,6 +10,6 @@ nav_order: 2
 <!-- _pages/publications.md -->
 <div class="publications">
 
-{% bibliography %}
+<p>No publications listed yet.</p>
 
 </div>
