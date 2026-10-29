@@ -34,3 +34,7 @@
 
 <!-- Jupyter Open External Links New Tab -->
 <script defer src="{{ '/assets/js/jupyter_new_tab.js' | relative_url | bust_file_cache }}"></script>
+
+{% if page.blog_language_base or page.content_lang %}
+  <script defer src="{{ '/assets/js/blog-languages.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}

@@ -16,6 +16,10 @@ layout: default
 
 <div class="post">
   <header class="post-header">
+    {% if page.content_lang %}
+      {% assign blog_return = '/blog/' | append: page.content_lang | append: '/' %}
+      <p><a href="{{ blog_return | relative_url }}" data-blog-return data-content-language="{{ page.content_lang }}" data-baseurl="{{ site.baseurl }}">{% if page.lang == 'ru' %}← К списку статей{% else %}← Back to blog{% endif %}</a></p>
+    {% endif %}
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
       {{ page.date | date: '%B %d, %Y' }}

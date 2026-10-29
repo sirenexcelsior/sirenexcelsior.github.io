@@ -1,4 +1,5 @@
 ---
+content_lang: ru
 layout: post
 title: Философия математики
 description: 

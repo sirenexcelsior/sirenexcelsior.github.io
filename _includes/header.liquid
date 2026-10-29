@@ -96,12 +96,12 @@
                   </div>
                 </li>
               {% else %}
-                <li class="nav-item {% if page.translation_url == p.permalink or page.permalink == p.permalink %}active{% endif %}">
+                <li class="nav-item {% if page.translation_url == p.permalink or page.permalink == p.permalink or page.blog_language_base and p.permalink == '/blog/' %}active{% endif %}">
                   {% assign url = p.permalink | default: p.url %}
                   {% if language == 'ru' %}{% assign url = url | prepend: '/ru' %}{% endif %}
                   <a class="nav-link" href="{{ url | relative_url }}">
                     {{- labels.navigation[p.title] | default: p.title }}
-                    {% if page.translation_url == p.permalink or page.permalink == p.permalink %}
+                    {% if page.translation_url == p.permalink or page.permalink == p.permalink or page.blog_language_base and p.permalink == '/blog/' %}
                       <span class="sr-only">{{ labels.current }}</span>
                     {% endif %}
                   </a>
@@ -120,6 +120,9 @@
             </li>
           {% endif %}
           {% assign translation_url = page.translation_url | default: '/ru/blog/' %}
+          {% if page.content_lang and page.blog_language_base == null %}
+            {% assign translation_url = '/ru/blog/' | append: page.content_lang | append: '/' %}
+          {% endif %}
           {% if paginator.page > 1 %}
             {% if language == 'ru' %}{% assign translation_url = page.url | remove_first: '/ru' %}{% else %}{% assign translation_url = page.url | prepend: '/ru' %}{% endif %}
           {% endif %}

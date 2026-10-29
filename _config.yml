@@ -159,6 +159,7 @@ disqus_shortname: al-folio # put your disqus shortname
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
   - name: medium.com
+    content_lang: en
     rss_url: https://medium.com/@sirenexcelsior/feed
 
 # -----------------------------------------------------------------------------
@@ -205,6 +206,7 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  - tests/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md

@@ -1127,3 +1127,40 @@ swiper-container {
 #language-toggle {
   font-weight: 500;
 }
+
+.blog-language-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+
+  @media (max-width: 576px) {
+    > span {
+      flex-basis: 100%;
+    }
+  }
+
+  .blog-language-option {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 5rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 2rem;
+    color: var(--global-theme-color);
+    text-decoration: none;
+    font-weight: 500;
+
+    &[aria-current="page"],
+    &:hover {
+      background: var(--global-theme-color);
+      color: var(--global-bg-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: 3px;
+    }
+  }
+}

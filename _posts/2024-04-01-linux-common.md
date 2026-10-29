@@ -1,4 +1,5 @@
 ---
+content_lang: en
 layout: post
 title: Linux Basic Command Manual
 description: Chapter 1 of Linux Trivia

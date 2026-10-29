@@ -1,4 +1,5 @@
 ---
+content_lang: zh
 layout: post
 title: 俄英中数学词汇表
 description: 180 个数学词汇与词组，涵盖 7 个分类，支持三语搜索及中英俄界面切换。
